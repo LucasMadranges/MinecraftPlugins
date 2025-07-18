@@ -4,6 +4,6 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class catRain : JavaPlugin() {
     override fun onEnable() {
-        getCommand("rtp")?.setExecutor(catRainCommand())
+        getCommand("catrain")?.setExecutor(catRainCommand())
     }
 }

@@ -5,5 +5,6 @@ include(
     "plugins:heal",
     "plugins:randomTeleport",
     "plugins:catrain",
+    "plugins:invisible",
     "run"
 )

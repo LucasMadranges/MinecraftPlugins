@@ -8,12 +8,12 @@ tasks {
     }
 
     val copyPlugins by registering(Copy::class) {
-        // On rend la copie dépendante du nettoyage
         dependsOn(cleanExtraPlugins)
         from(project(":plugins:catrain").tasks.named("shadowJar"))
         from(project(":plugins:heal").tasks.named("shadowJar"))
         from(project(":plugins:randomTeleport").tasks.named("shadowJar"))
         from(project(":plugins:welcome").tasks.named("shadowJar"))
+        from(project(":plugins:invisible").tasks.named("shadowJar"))
         into(layout.buildDirectory.dir("server/plugins"))
     }
 

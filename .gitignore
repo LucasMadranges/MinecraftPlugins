@@ -4,15 +4,25 @@
 /.idea/
 /.kotlin/
 
-# Plugins
+# Catrain
 /plugins/catrain/build/
 /plugins/catrain/build/classes/kotlin/main/
+
+# Heal
 /plugins/heal/build/
 /plugins/heal/build/classes/kotlin/main/
+
+# Random Teleport
 /plugins/randomTeleport/build/
 /plugins/randomTeleport/build/classes/kotlin/main/
+
+# Welcome
 /plugins/welcome/build/
 /plugins/welcome/build/classes/kotlin/main/
+
+# Invisible
+/plugins/invisible/build/
+/plugins/invisible/build/classes/kotlin/main/
 
 # Run
 /run/build/
