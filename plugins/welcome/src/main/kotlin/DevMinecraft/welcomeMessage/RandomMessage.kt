@@ -1,9 +1,16 @@
 package DevMinecraft.welcomeMessage
 
-import net.kyori.adventure.text.Component
+import org.bukkit.Bukkit
+import org.bukkit.Color
+import org.bukkit.FireworkEffect
+import org.bukkit.entity.EntityType
+import org.bukkit.entity.Firework
+import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerJoinEvent
+import org.bukkit.inventory.meta.FireworkMeta
+
 
 class RandomMessage : Listener {
     private var message: Array<String> = arrayOf(
@@ -28,10 +35,60 @@ class RandomMessage : Listener {
         "« Conseil : casser la glace ne fonctionne pas avec les zombies. »",
         "« Mode Hardcore émotionnel activé. Ne t’attache à rien. »",
     )
+    private var color: Array<Color> = arrayOf(
+        Color.AQUA,
+        Color.BLUE,
+        Color.FUCHSIA,
+        Color.GREEN,
+        Color.LIME,
+        Color.MAROON,
+        Color.NAVY,
+        Color.OLIVE,
+        Color.ORANGE,
+        Color.PURPLE,
+    )
 
     @EventHandler
     fun onPlayerJoin(event: PlayerJoinEvent) {
         val player = event.player
-        player.sendMessage(Component.text(message.random()))
+        val maxLength = 50
+
+        LaunchFirework(player)
+        Bukkit.getScheduler().runTaskLater(
+            Bukkit.getPluginManager().getPlugin("WelcomePlugin")!!,
+            Runnable {
+                player.sendMessage(
+                    "§8${"=".repeat(maxLength)}\n" +
+                            " \n" +
+                            "§a${" ".repeat(maxLength / 2)}Bienvenue, §c${player.name} !\n" +
+                            " \n" +
+                            "§f${" ".repeat(maxLength / 5)}${message.random()}\n" +
+                            " \n" +
+                            "§8${"=".repeat(maxLength)}"
+                )
+            },
+            2L // délai de 2 ticks (~0.1s)
+        )
+    }
+
+    fun LaunchFirework(player: Player) {
+        val world = player.world
+        val location = player.location
+
+        for (i in 1..3) {
+            val entity = world.spawnEntity(location, EntityType.FIREWORK_ROCKET)
+            val firework = entity as? Firework ?: return
+            val meta: FireworkMeta = firework.fireworkMeta
+            meta.addEffect(
+                FireworkEffect.builder()
+                    .withColor(color.random())
+                    .with(FireworkEffect.Type.BALL_LARGE)
+                    .withFlicker()
+                    .withTrail()
+                    .build()
+            )
+            meta.power = 1
+            firework.fireworkMeta = meta
+        }
     }
 }
