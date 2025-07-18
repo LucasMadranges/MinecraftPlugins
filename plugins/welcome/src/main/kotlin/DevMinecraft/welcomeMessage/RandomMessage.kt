@@ -62,7 +62,7 @@ class RandomMessage : Listener {
                             " \n" +
                             "§a${" ".repeat(maxLength / 2)}Bienvenue, §c${player.name} !\n" +
                             " \n" +
-                            "§f${" ".repeat(maxLength / 5)}${message.random()}\n" +
+                            "§f${" ".repeat(maxLength / 6)}${message.random()}\n" +
                             " \n" +
                             "§8${"=".repeat(maxLength)}"
                 )

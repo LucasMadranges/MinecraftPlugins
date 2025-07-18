@@ -7,5 +7,6 @@ include(
     "plugins:catrain",
     "plugins:invisible",
     "plugins:anti-jump",
+    "plugins:playerList",
     "run"
 )

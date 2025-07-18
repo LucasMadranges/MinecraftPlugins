@@ -28,7 +28,12 @@
 /plugins/anti-jump/build/
 /plugins/anti-jump/build/classes/kotlin/main/
 
+# PlayerList
+/plugins/playerList/build/
+/plugins/playerList/build/classes/kotlin/main/
+
 # Run
 /run/build/
-/run/run
 /run/logs
+/run/run/*
+!run/run/eula.txt
