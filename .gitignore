@@ -1,0 +1,12 @@
+# Project exclude paths
+/.gradle/
+/build/
+/plugins/catrain/build/
+/plugins/catrain/build/classes/kotlin/main/
+/plugins/heal/build/
+/plugins/heal/build/classes/kotlin/main/
+/plugins/randomTeleport/build/
+/plugins/randomTeleport/build/classes/kotlin/main/
+/plugins/welcome/build/
+/plugins/welcome/build/classes/kotlin/main/
+/run/build/
