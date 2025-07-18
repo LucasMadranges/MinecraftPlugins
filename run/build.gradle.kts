@@ -16,6 +16,7 @@ tasks {
         from(project(":plugins:invisible").tasks.named("shadowJar"))
         from(project(":plugins:anti-jump").tasks.named("shadowJar"))
         from(project(":plugins:playerList").tasks.named("shadowJar"))
+        from(project(":plugins:sideBar").tasks.named("shadowJar"))
         into(layout.buildDirectory.dir("server/plugins"))
     }
 

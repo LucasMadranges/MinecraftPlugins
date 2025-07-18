@@ -8,5 +8,6 @@ include(
     "plugins:invisible",
     "plugins:anti-jump",
     "plugins:playerList",
+    "plugins:sideBar",
     "run"
 )

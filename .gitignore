@@ -32,6 +32,10 @@
 /plugins/playerList/build/
 /plugins/playerList/build/classes/kotlin/main/
 
+# Sidebar
+/plugins/sideBar/build/
+/plugins/sideBar/build/classes/kotlin/main/
+
 # Run
 /run/build/
 /run/logs
