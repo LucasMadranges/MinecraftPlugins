@@ -25,7 +25,7 @@ class randomTeleportCommand : CommandExecutor {
                 } !"
             )
         } else {
-            sender.sendMessage("Cette commande ne peut être utilisée que par un opérateur.")
+            sender.sendMessage("§cCette commande ne peut être utilisée que par un opérateur.")
         }
         return true
     }

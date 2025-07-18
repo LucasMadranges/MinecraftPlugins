@@ -24,6 +24,10 @@
 /plugins/invisible/build/
 /plugins/invisible/build/classes/kotlin/main/
 
+# AntiJump
+/plugins/anti-jump/build/
+/plugins/anti-jump/build/classes/kotlin/main/
+
 # Run
 /run/build/
 /run/run

@@ -1,7 +1,7 @@
 name: randomTeleport
 version: '1.0-SNAPSHOT'
 main: DevMinecraft.randomTeleport.randomTeleport
-api-version: '1.21.6'
+api-version: '1.21.8'
 authors: [ Lucas Madranges ]
 description: Teleport player to a random position.
 commands:

@@ -17,15 +17,15 @@ class InvisibleCommand : CommandExecutor {
                 sender.isInvulnerable = false
                 sender.isInvisible = false
                 sender.allowFlight = false
-                sender.sendMessage("${sender.name} n'est plus invisible.")
+                sender.sendMessage("§a${sender.name} n'est plus invisible.")
             } else {
                 sender.isInvulnerable = true
                 sender.isInvisible = true
                 sender.allowFlight = true
-                sender.sendMessage("${sender.name} est maintenant invisible.")
+                sender.sendMessage("§a${sender.name} est maintenant invisible.")
             }
         } else {
-            sender.sendMessage("Cette commande ne peut être utilisée que par un opérateur.")
+            sender.sendMessage("§cCette commande ne peut être utilisée que par un opérateur.")
         }
         return true
     }

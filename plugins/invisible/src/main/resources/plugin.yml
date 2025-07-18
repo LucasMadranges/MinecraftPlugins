@@ -1,7 +1,7 @@
 name: invisible
 version: '1.0-SNAPSHOT'
 main: DevMinecraft.invisible.Invisible
-api-version: '1.21'
+api-version: '1.21.8'
 authors: [ Lucas Madranges ]
 description: Made player invisible.
 commands:

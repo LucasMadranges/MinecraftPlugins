@@ -1,12 +1,11 @@
-package DevMinecraft.healPlayer
+package DevMinecraft.antiJump
 
-import org.bukkit.attribute.Attribute
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
-class healPlayerCommand : CommandExecutor {
+class AntiJumpCommand(private val plugin: AntiJump) : CommandExecutor {
     override fun onCommand(
         sender: CommandSender,
         command: Command,
@@ -14,11 +13,13 @@ class healPlayerCommand : CommandExecutor {
         args: Array<out String>
     ): Boolean {
         if (sender is Player && sender.isOp) {
-            val attribute = sender.getAttribute(Attribute.MAX_HEALTH)
-            val maxHealth = attribute?.value ?: 20.0
-            sender.health = maxHealth
-            sender.foodLevel = 20
-            sender.sendMessage("§aVous avez été soigné !")
+            if (plugin.isAntiJumpEnabled) {
+                plugin.isAntiJumpEnabled = false
+                sender.sendMessage("§aAnti-jump désactivé.")
+            } else {
+                plugin.isAntiJumpEnabled = true
+                sender.sendMessage("§aAnti-jump activé.")
+            }
             return true
         } else {
             sender.sendMessage("§cCette commande ne peut être utilisée que par un opérateur.")

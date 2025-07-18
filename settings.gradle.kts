@@ -6,5 +6,6 @@ include(
     "plugins:randomTeleport",
     "plugins:catrain",
     "plugins:invisible",
+    "plugins:anti-jump",
     "run"
 )
