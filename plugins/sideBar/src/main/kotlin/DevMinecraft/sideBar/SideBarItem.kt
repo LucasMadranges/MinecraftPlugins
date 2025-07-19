@@ -19,11 +19,17 @@ class SideBarItem : Listener {
         val objective = scoreboard.registerNewObjective(
             "info",
             Criteria.DUMMY,
-            Component.text("Ma Sidebar stylée")
+            Component.text("Server info")
         )
         objective.displaySlot = DisplaySlot.SIDEBAR
 
-        // Très important : affecter le scoreboard créé au joueur !
+        objective.getScore("§a–".repeat(15)).score = 5
+        objective.getScore("Server Name: " + "§c" + event.player.server.name).score = 4
+        objective.getScore("").score = 3
+        objective.getScore("Server IP: " + "§c" + event.player.server.ip).score = 2
+        objective.getScore("").score = 1
+        objective.getScore("Bon jeu !").score = 0
+
         event.player.scoreboard = scoreboard
     }
 }

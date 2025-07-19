@@ -4,7 +4,7 @@ plugins {
 
 tasks {
     val cleanExtraPlugins by registering(Delete::class) {
-        delete(layout.buildDirectory.dir("server/plugins/.paper-remapped/extra-plugins"))
+        delete(file("run/plugins/.paper-remapped/extra-plugins"))
     }
 
     val copyPlugins by registering(Copy::class) {
