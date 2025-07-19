@@ -9,5 +9,6 @@ include(
     "plugins:anti-jump",
     "plugins:playerList",
     "plugins:sideBar",
+    "plugins:homeTeleport",
     "run"
 )
